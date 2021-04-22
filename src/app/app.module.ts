@@ -5,10 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './search.pipe';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SetupPageComponent } from './setup-page/setup-page.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    UserComponent,
+    SearchPipe,
+    HomePageComponent,
+    SetupPageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

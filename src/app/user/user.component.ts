@@ -8,5 +8,12 @@ import { Component, Input } from '@angular/core';
 export class UserComponent {
   @Input() user: any;
 
-  onClick() {}
+  isChecked = false;
+  checkButtonValue = 'check';
+
+  onClick() {
+    this.isChecked = !this.isChecked;
+    this.checkButtonValue =
+      this.checkButtonValue === 'check' ? 'uncheck' : 'check';
+  }
 }
