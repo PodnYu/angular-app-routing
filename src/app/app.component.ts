@@ -14,6 +14,16 @@ export class AppComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
+    this.userService.getUsers().subscribe((users: any) => {
+      this.users = users.results.map((user: any) => {
+        return {
+          name: `${user.name.first} ${user.name.last}`,
+          image: user.picture.large,
+          geo: `${user.location.city} ${user.location.state} ${user.location.street.name}`,
+        };
+      });
+
+      console.log(this.users);
+    });
   }
 }

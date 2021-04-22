@@ -1,19 +1,16 @@
 <div class="col s3">
   <div class="card">
     <div class="card-image">
-      <img src="http://materializecss.com/images/sample-1.jpg" />
+      <img src="{{ user.image }}" />
       <span class="card-title">{{ user.name }}</span>
     </div>
     <div class="card-content">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-        quisquam dicta minima molestias, quidem, blanditiis facere non dolorem
-        eum atque ducimus natus dolorum fugit nobis? Nemo mollitia suscipit
-        maiores eligendi!
+        {{ user.geo }}
       </p>
     </div>
     <div class="card-action">
-      <a href="#">this is a link</a>
+      <a class="waves-effect waves-light btn" (click)="onClick()">Check</a>
     </div>
   </div>
 </div>
